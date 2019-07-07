@@ -1,0 +1,80 @@
+\documentclass[letterpaper,10pt]{article}
+\usepackage[letterpaper, margin=.75in]{geometry}
+
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{wasysym}
+\usepackage{graphicx}
+
+
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black
+}
+
+\begin{document}
+\begin{titlepage}
+\vspace*{\fill}
+\begin{center}
+{\Large Tut-Tut, The IoT Rain Fall Detector}
+\\[0.3cm]
+
+{\large CS 461}
+\\[0.3cm]
+
+{\large Fall 2018}
+\\[0.3cm]
+
+{\large Michael Gillett}
+\\[0.1cm]
+
+\large {October 11, 2018}
+
+\begin{abstract}
+\normalsize
+Tut-Tut, the IoT Raindrop Detector, is a project under the domain of the OPEnS (Openly Published Environment Sensing) Lab at Oregon State University. Tut-Tut will be able to detect a raindrop of any size, get an idea of the drop's mass from the intensity at which it falls, and detect the frequency of raindrops. After Tut-Tut gathers this data, it will be able to wirelessly transmit the information to a central server and communicate it to other IoT devices around Oregon State University.
+\newline
+The detector will wake up with a single raindrop and will stay awake as long as rain is detected within a minute. If it does not detect raindrops within a minute, it will go back to sleep.
+In addition to the physical device, we will also design an online mobile application to which the physical device will transmit information about the raindrops.
+\end{abstract}   
+\end{center}
+\vspace*{\fill}
+\end{titlepage}
+
+\section{Problem Statement}
+The OPEnS Lab at Oregon State University is dedicated to developing technology that helps better our understanding of the world around us. They develop tools that can, for example, detect the water content of soil across a patch of farm land, and give real-time updates about their conditions. Say the field is getting an overload of water in one particular area: their technology could hook up to the sprinkler system and water only the sections of the field with water content below a certain threshold.
+\newline
+\newline
+Say you want information about the water flowing in a river, creek, or stream: they have an artificial rock designed with several sensors to be placed in the running water and give information about the flow, temperature, or other details. These are just some of the components of their ever-growing neural network. However, there is still more that can be done. For a long time, we've used rainfall collectors that can tell us the volume of the rain that has precipitated in an area over a given period of time, but sometimes that just doesn't tell us enough. The problem that our client, Professor Udell, outlined for us is that we need some sort of disc-shaped sensory device that can detect and provide detailed information about the falling rain in real-time. 
+\newline
+
+\section{Problem Solution}
+The solution to the problem of limited data on rainfall is to create Tut-Tut, the IoT Raindrop Detector. Tut-Tut will integrate with the mesh network of IoT devices around the university, and they will provide information to a central server. On this central server, there will be an excel spreadsheet containing all of the most recent data gathered by Tut-Tut. This excel spreadsheet will most likely have raw data, as well as row/column based functions to extract more interesting or presentable data. The server will then feed that information to a mobile application programmed by our team, and this application will display important data on metrics such as raindrop size, rainfall intensity and rainfall rate. This application will allow for real-time monitoring of rainfall patterns in the area. Having this information could allow for farmers to know precisely how much rain their crops are getting, so that they can more precisely measure how much they have to water their crops. This could also allow for much more ideal water conservation methods. 
+\newline
+\newline
+The idea behind most of the OPEnS labs' technology is for it to be able to adapt to new environments without being drastically reconfigured. Their soil moisture sensor can be moved from place to place without raising an error, and their land-based robot can navigate an unknown environment and still know about its position and distance covered. It goes without saying that Tut-Tut should be able to operate in the same manner. It shouldn't matter if we move the device a few feet to the left or even relocate it all the way to the opposite side of campus. As long as we can connect to the server to upload the necessary data, Tut-Tut should continue to operate as normal.
+\newline
+\newline
+In our device, which we will fully design and 3D print at the OPEnS lab, we wanna have a flat, circular sensor approximately 4 inches in diameter that can detect and measure miniscule hits from the rain. The Mechanical Energy produced by the hits is converted into into voltage for our microcontroller. The materials available to create this device are a piezo, a MEMS, or an accelerometer. These all have nearly the same functionality, but we will conduct tests on all 3 of them to see which fits our needs best. The flat sensor will be hooked up to a Feather m0 microcontroller that we will program using Arduino IDE. The microcontroller will be how we incorporate the readings and data manipulation we want, and also how we relay that information to the remote server.
+\newline
+\newline
+\section{Performance Metrics}
+This project will be defined as complete when it can:
+\begin{enumerate}
+    \item Detect a raindrop. The detector will wake up with a single raindrop and will stay awake as long as rain is detected within a minute. If it does not detect raindrops within a minute, it will go back to sleep. This is the crucial first step upon which the rest of this project will depend on.
+    \item Calculate rainfall rate. If Tut-Tut can detect the frequency at which raindrops are falling, it has gained invaluable knowledge about its surrounding ecosystem.
+    \item Calculate rainfall intensity. The microcontroller should be able to detect the intensity at which individual raindrops hit the device.
+    \item Calculate individual raindrop size. The size of each raindrop (or average size) will be calculated from the data that Tut-Tut retrieves. 
+    \item Integrate with the OPEnS mesh network of IoT devices around Oregon State University. We want these devices to communicate with one another and share data with a central server.
+    \item Display this information to a user on a visually pleasing mobile application whose UI can be easily navigated so the user has minimal difficulty finding the data they are looking for.
+\end{enumerate}
+
+Upon completing these 6 steps, our Tut-Tut IoT Rainfall Detector will be completed
+
+\bibliography{myref}
+\bibliographystyle{ieeetr}
+
+\end{document}

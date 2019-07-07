@@ -1,0 +1,32 @@
+Tut-Tut Installation Guide
+
+Step 1: Navigate to https://www.arduino.cc/en/Main/Software and select the appropriate download based on your operating system.
+
+Step 2: Install the latest Arduino IDE version.
+
+Remaining steps based on Windows version
+
+Step 3: By default, the installation will place an Arduino folder in the Documents System Folder. Other destinations can be specified during the installation.
+
+Step 4: Move the libraries and piezo_vibration_sensor folders from the TutTut_Code folder of this repository into the Arduino folder at your specified destination.
+
+Step 5: Move into the piezo_vibration_sensor folder and open the piezo_vibration_sensor.ino file. This will launch the Arduino IDE.
+
+Step 6: Additionally, open up the config.h file and navigate to the WIFI SETTINGS section. Change the DEFAULT_NETWORK and DEFAULT_PASSWORD to the desired network and password.
+
+Step 7: Connect the TutTut device to your computer via a microUSB cable.
+
+Step 8: In the Arduino IDE, click the Tools dropdown menu at the top.
+
+Step 9: Where it says Board: "XXXXX", select Adafruit Feather M0 from the additional dropdown menu.
+
+Step 10: Now press the upload button (Right Arrow) to compile and upload the sketch to the microcontroller in the Tut-Tut Device.
+
+Step 11: The code should start immediately after the upload is complete and will continue to run unless disconnected from power. The USB can now be disconnected and the battery can be connected.
+
+
+Tut-Tut Installation Guide Command Line On Linux
+
+Step 1: Go to Arduino site and follow the necessary steps listed: https://www.arduino.cc/en/guide/linux
+
+Step 2: Once installed, follow similar steps to the above to upload the sketch to the microcontroller.
